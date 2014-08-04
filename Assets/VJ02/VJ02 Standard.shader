@@ -21,6 +21,7 @@
 
         // Global property.
         float4x4 _VJ02_EnvMapMatrix;
+        float _VJ02_Exposure;
 
         // Material properties.
         float4 _Color;
@@ -33,7 +34,7 @@
 
         float3 SampleRGBM(float4 c)
         {
-            float e = c.a * 8;
+            float e = c.a * 8 * _VJ02_Exposure;
             float e2 = e * e;
             float lin_e = dot(float2(0.7532, 0.2468), float2(e2, e2 * 2));
             return c.rgb * lin_e;

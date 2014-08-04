@@ -3,27 +3,13 @@ using System.Collections;
 
 public class AmbientSwitcher : MonoBehaviour
 {
-    public Color lightColor;
-    public Color darkColor;
+    public Reaktion.Reaktor reaktor;
+    public Gradient gradient;
 
-    bool flipFlop;
-
-    public void Start()
+    void Update()
     {
-        SetLight();
-    }
-
-    public void Toggle()
-    {
-        flipFlop = !flipFlop;
-        Camera.main.backgroundColor = flipFlop ? darkColor : lightColor;
-        RenderSettings.fogColor = flipFlop ? darkColor : lightColor;
-    }
-
-    public void SetLight()
-    {
-        flipFlop = false;
-        Camera.main.backgroundColor = lightColor;
-        RenderSettings.fogColor = lightColor;
+        var c = gradient.Evaluate(reaktor.Output);
+        Camera.main.backgroundColor = c;
+        RenderSettings.fogColor = c;
     }
 }
