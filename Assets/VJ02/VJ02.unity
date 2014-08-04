@@ -13,7 +13,7 @@ SceneSettings:
 --- !u!104 &2
 RenderSettings:
   m_Fog: 1
-  m_FogColor: {r: .308823526, g: .308823526, b: .308823526, a: 1}
+  m_FogColor: {r: 1, g: 1, b: 1, a: 0}
   m_FogMode: 3
   m_FogDensity: .0799999982
   m_LinearFogStart: 0
@@ -279,6 +279,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1517970185}
+        m_MethodName: Toggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_Enabled: 1
+      - m_Target: {fileID: 942219257}
         m_MethodName: Toggle
         m_Mode: 1
         m_Arguments:
@@ -2248,6 +2260,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 942219255}
   - 114: {fileID: 942219256}
+  - 114: {fileID: 942219257}
   m_Layer: 0
   m_Name: Standard Shader
   m_TagString: Untagged
@@ -2278,6 +2291,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 174d2986843a54a6397bf7c34d5afca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &942219257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 942219254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bae0de707c3864608a0fa1318d5cf7c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightColor: {r: 1, g: 1, b: 1, a: 0}
+  darkColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &947375699
 GameObject:
   m_ObjectHideFlags: 0
@@ -2567,6 +2593,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1517970184}
+        m_MethodName: Toggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_Enabled: 1
+      - m_Target: {fileID: 942219257}
         m_MethodName: Toggle
         m_Mode: 1
         m_Arguments:
@@ -3721,7 +3759,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: .308823526, g: .308823526, b: .308823526, a: 1}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
