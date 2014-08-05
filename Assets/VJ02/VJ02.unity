@@ -780,7 +780,7 @@ GameObject:
   - 4: {fileID: 81373284}
   - 114: {fileID: 81373283}
   m_Layer: 0
-  m_Name: Camera Move
+  m_Name: '#12 Camera Move'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -833,8 +833,8 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-  offsetEnabled: 0
-  offsetKnobIndex: 3
+  offsetEnabled: 1
+  offsetKnobIndex: 18
   offsetKnobChannel: 16
   offsetInputAxis: 
   offsetCurve:
@@ -2159,11 +2159,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 168341010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: -2.70000076}
+  m_LocalPosition: {x: 0, y: -0, z: -2.70000148}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1517970174}
-  m_Father: {fileID: 1255269944}
+  m_Father: {fileID: 572176415}
   m_RootOrder: 0
 --- !u!114 &168341012
 MonoBehaviour:
@@ -2203,7 +2203,7 @@ MonoBehaviour:
     arbitraryVector: {x: 0, y: 1, z: 0}
     randomness: 0
   rotation:
-    mode: 1
+    mode: 0
     min: 0
     max: 10
     curve:
@@ -2529,7 +2529,7 @@ GameObject:
   - 4: {fileID: 389770246}
   - 114: {fileID: 389770245}
   m_Layer: 0
-  m_Name: Ambience
+  m_Name: '#11 Ambience'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2582,8 +2582,8 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-  offsetEnabled: 0
-  offsetKnobIndex: 3
+  offsetEnabled: 1
+  offsetKnobIndex: 17
   offsetKnobChannel: 16
   offsetInputAxis: 
   offsetCurve:
@@ -2860,6 +2860,117 @@ Transform:
   - {fileID: 867477216}
   m_Father: {fileID: 1776965943}
   m_RootOrder: 0
+--- !u!1 &572176414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 572176415}
+  - 114: {fileID: 572176416}
+  m_Layer: 0
+  m_Name: Camera Pivot 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &572176415
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 572176414}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 168341011}
+  m_Father: {fileID: 1255269944}
+  m_RootOrder: 0
+--- !u!114 &572176416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 572176414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c73495c07c574c8888398de99a9c523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reaktor:
+    _mode: 2
+    _reference: {fileID: 1093393092}
+    _name: 
+    _forceUpdate: 1
+  position:
+    mode: 0
+    min: 0
+    max: 1
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 1
+        tangentMode: 0
+      - time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    arbitraryVector: {x: 0, y: 1, z: 0}
+    randomness: 0
+  rotation:
+    mode: 1
+    min: 0
+    max: 20
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 1
+        tangentMode: 0
+      - time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    arbitraryVector: {x: 0, y: 1, z: 0}
+    randomness: 0
+  scale:
+    mode: 0
+    min: 1
+    max: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 1
+        tangentMode: 0
+      - time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    arbitraryVector: {x: 1, y: 1, z: 1}
+    randomness: 0
+  addInitialValue: 0
+  scaleByShader: 0
+  scalePropertyName: _Scale
 --- !u!1 &582962134
 GameObject:
   m_ObjectHideFlags: 0
@@ -5054,6 +5165,107 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1457649203}
   m_RootOrder: 0
+--- !u!1 &1093393090
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1093393091}
+  - 114: {fileID: 1093393092}
+  m_Layer: 0
+  m_Name: '#13 Camera Adjust'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1093393091
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1093393090}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1764749429}
+  m_RootOrder: 9
+--- !u!114 &1093393092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1093393090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a3ec3ae67a0841d8aa990e0f2e1089e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoBind: 0
+  injector: {fileID: 0}
+  audioCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  gainEnabled: 0
+  gainKnobIndex: 2
+  gainKnobChannel: 16
+  gainInputAxis: 
+  gainCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  offsetEnabled: 1
+  offsetKnobIndex: 19
+  offsetKnobChannel: 16
+  offsetInputAxis: 
+  offsetCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  sensitivity: 1.66000009
+  decaySpeed: 100
+  showAudioOptions: 0
+  headroom: 2
+  dynamicRange: 16
+  lowerBound: -60
+  falldown: .5
 --- !u!1 &1099754098
 GameObject:
   m_ObjectHideFlags: 0
@@ -5572,7 +5784,7 @@ GameObject:
   - 114: {fileID: 1154230867}
   - 114: {fileID: 1154230868}
   m_Layer: 0
-  m_Name: Light
+  m_Name: '#10 Light'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5621,7 +5833,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   gainEnabled: 0
-  gainKnobIndex: 2
+  gainKnobIndex: 16
   gainKnobChannel: 16
   gainInputAxis: 
   gainCurve:
@@ -5639,8 +5851,8 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-  offsetEnabled: 0
-  offsetKnobIndex: 3
+  offsetEnabled: 1
+  offsetKnobIndex: 16
   offsetKnobChannel: 16
   offsetInputAxis: 
   offsetCurve:
@@ -8218,7 +8430,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 168341011}
+  - {fileID: 572176415}
   m_Father: {fileID: 1578556487}
   m_RootOrder: 0
 --- !u!114 &1255269945
@@ -8227,7 +8439,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1255269943}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74090bf65deb941b0bdd0e60f1b8d4b6, type: 3}
   m_Name: 
@@ -8337,6 +8549,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_Enabled: 1
+      - m_Target: {fileID: 1255269945}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_Enabled: 1
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &1255269947
@@ -8368,7 +8592,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   gainEnabled: 0
-  gainKnobIndex: 2
+  gainKnobIndex: 100
   gainKnobChannel: 16
   gainInputAxis: 
   gainCurve:
@@ -8386,10 +8610,10 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-  offsetEnabled: 0
-  offsetKnobIndex: 3
+  offsetEnabled: 1
+  offsetKnobIndex: 100
   offsetKnobChannel: 16
-  offsetInputAxis: 
+  offsetInputAxis: Jump
   offsetCurve:
     serializedVersion: 2
     m_Curve:
@@ -11935,6 +12159,7 @@ Transform:
   - {fileID: 770772782}
   - {fileID: 1520806904}
   - {fileID: 1812207558}
+  - {fileID: 1093393091}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!1 &1766236269
@@ -13322,8 +13547,8 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-  offsetEnabled: 0
-  offsetKnobIndex: 3
+  offsetEnabled: 1
+  offsetKnobIndex: 8
   offsetKnobChannel: 16
   offsetInputAxis: 
   offsetCurve:
@@ -13342,7 +13567,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   sensitivity: 0
-  decaySpeed: 1.5
+  decaySpeed: 100
   showAudioOptions: 1
   headroom: 2
   dynamicRange: 16
@@ -14625,7 +14850,7 @@ GameObject:
   - 114: {fileID: 1879721327}
   - 114: {fileID: 1879721326}
   m_Layer: 0
-  m_Name: Origin
+  m_Name: '#14 Origin'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14722,8 +14947,8 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-  offsetEnabled: 0
-  offsetKnobIndex: 3
+  offsetEnabled: 1
+  offsetKnobIndex: 20
   offsetKnobChannel: 16
   offsetInputAxis: 
   offsetCurve:
