@@ -7537,6 +7537,7 @@ MonoBehaviour:
   _tonemapping: 0
   _exposure: 1.87
   _vignette: 4.19999981
+  shader: {fileID: 4800000, guid: dc9775b65c52747e69fc4c854c00d696, type: 3}
 --- !u!114 &1517970176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7668,6 +7669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _intensity: .0399999991
+  shader: {fileID: 4800000, guid: de782114409bf409495896cc089fbf82, type: 3}
 --- !u!114 &1517970182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7688,6 +7690,7 @@ MonoBehaviour:
   _interval: .379999995
   _width: .25
   _speed: 1
+  shader: {fileID: 4800000, guid: a7273e52e54b24131911224fbd89245b, type: 3}
 --- !u!114 &1517970183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7709,6 +7712,7 @@ MonoBehaviour:
   _waveInterval: 10
   _waveSpeed: 5
   _addColor: {r: 0, g: 0, b: 0, a: 1}
+  shader: {fileID: 4800000, guid: 6d12e7ab487bf49d18b89038af741a18, type: 3}
 --- !u!114 &1517970184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8062,6 +8066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca07055447e274825bacd4c86b9d279e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: 78db9cb22f2fe4ef7bc5d12f355d446e, type: 3}
   overlay: {fileID: 2800000, guid: 3baae10a09e8a491da249c1b62a5e15b, type: 3}
 --- !u!114 &1517970189
 MonoBehaviour:

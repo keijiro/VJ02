@@ -5,6 +5,7 @@ using System.Collections;
 [RequireComponent(typeof(Camera))]
 public class VJ02Composite : MonoBehaviour
 {
+    public Shader shader;
     public Texture2D overlay;
 
     Material material;
@@ -13,7 +14,7 @@ public class VJ02Composite : MonoBehaviour
     {
         if (material == null)
         {
-            material = new Material(Shader.Find("Hidden/VJ02 Composite"));
+            material = new Material(shader);
             material.hideFlags = HideFlags.DontSave;
         }
         material.SetTexture("_OverlayTex", overlay);
