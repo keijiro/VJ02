@@ -10,15 +10,14 @@ public class KvantGenericDeformer : MonoBehaviour
     public bool smooth = true;
     public bool surfaceSpace = false;
     public int octave = 3;
-    public Vector3 deformAmount = Vector3.one;
-    public Vector3 noiseScale = Vector3.one;
-    public Vector3 noiseVelocity1 = Vector3.right;
-    public Vector3 noiseVelocity2 = Vector3.up;
-    public Vector3 noiseVelocity3 = Vector3.forward;
-    public float noiseSpeed = 0.2f;
-    public Vector3 noiseOffset1 = Vector3.right;
-    public Vector3 noiseOffset2 = Vector3.up;
-    public Vector3 noiseOffset3 = Vector3.forward;
+
+    [SerializeField] float _displacement = 1;
+    [SerializeField] float _noiseScale = 1;
+    [SerializeField] float _noiseSpeed = 0.2f;
+
+    public float displacement { get { return _displacement; } set { _displacement = value; } }
+    public float noiseScale   { get { return _noiseScale;   } set { _noiseScale   = value; } }
+    public float noiseSpeed   { get { return _noiseSpeed;   } set { _noiseSpeed   = value; } }
 
     // Main mesh object.
     Mesh mesh;
@@ -33,6 +32,11 @@ public class KvantGenericDeformer : MonoBehaviour
     // Temporary vertex arrays.
     Vector3[] temp1;
     Vector3[] temp2;
+
+    // Noise parameters.
+    Vector3 noiseOffset1 = Vector3.right;
+    Vector3 noiseOffset2 = Vector3.up;
+    Vector3 noiseOffset3 = Vector3.forward;
 
     void Awake ()
     {
@@ -128,11 +132,11 @@ public class KvantGenericDeformer : MonoBehaviour
     void Update ()
     {
         // Move the offset vectors.
-        var delta = Time.deltaTime * noiseSpeed;
+        var delta = Time.deltaTime * _noiseSpeed;
 
-        noiseOffset1 += noiseVelocity1 * delta;
-        noiseOffset2 += noiseVelocity2 * delta;
-        noiseOffset3 += noiseVelocity3 * delta;
+        noiseOffset1 += Vector3.right   * delta;
+        noiseOffset2 += Vector3.up      * delta;
+        noiseOffset3 += Vector3.forward * delta;
 
         // Move the vertices.
         if (surfaceSpace)
@@ -140,12 +144,12 @@ public class KvantGenericDeformer : MonoBehaviour
             for (var i = 0; i < position.Length; i++)
             {
                 var v = position[i];
-                var c1 = (v + noiseOffset1) * noiseScale.x;
-                var c2 = (v + noiseOffset2) * noiseScale.y;
-                var c3 = (v + noiseOffset3) * noiseScale.z;
-                v += vector1[i] * (Kvant.Fractal(c1, octave) * deformAmount.x);
-                v += vector2[i] * (Kvant.Fractal(c2, octave) * deformAmount.y);
-                v += vector3[i] * (Kvant.Fractal(c3, octave) * deformAmount.z);
+                var c1 = (v + noiseOffset1) * _noiseScale;
+                var c2 = (v + noiseOffset2) * _noiseScale;
+                var c3 = (v + noiseOffset3) * _noiseScale;
+                v += vector1[i] * (Kvant.Fractal(c1, octave) * _displacement);
+                v += vector2[i] * (Kvant.Fractal(c2, octave) * _displacement);
+                v += vector3[i] * (Kvant.Fractal(c3, octave) * _displacement);
                 temp1[i] = v;
             }
         }
@@ -154,12 +158,12 @@ public class KvantGenericDeformer : MonoBehaviour
             for (var i = 0; i < position.Length; i++)
             {
                 var v = position[i];
-                var c1 = (v + noiseOffset1) * noiseScale.x;
-                var c2 = (v + noiseOffset2) * noiseScale.y;
-                var c3 = (v + noiseOffset3) * noiseScale.z;
-                v += Vector3.right   * (Kvant.Fractal(c1, octave) * deformAmount.x);
-                v += Vector3.up      * (Kvant.Fractal(c2, octave) * deformAmount.y);
-                v += Vector3.forward * (Kvant.Fractal(c3, octave) * deformAmount.z);
+                var c1 = (v + noiseOffset1) * _noiseScale;
+                var c2 = (v + noiseOffset2) * _noiseScale;
+                var c3 = (v + noiseOffset3) * _noiseScale;
+                v += Vector3.right   * (Kvant.Fractal(c1, octave) * _displacement);
+                v += Vector3.up      * (Kvant.Fractal(c2, octave) * _displacement);
+                v += Vector3.forward * (Kvant.Fractal(c3, octave) * _displacement);
                 temp1[i] = v;
             }
         }
