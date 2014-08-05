@@ -128,6 +128,14 @@ public class VariableMotion : MonoBehaviour
         ApplyTransform();
     }
 
+    public void Rewind()
+    {
+        position.Initialize();
+        rotation.Initialize();
+        scale.Initialize();
+        ApplyTransform();
+    }
+
     void Update()
     {
         // Advance the time parameters.
