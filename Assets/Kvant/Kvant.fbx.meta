@@ -1,0 +1,153 @@
+fileFormatVersion: 2
+guid: 008e21d54c3bb4c228206209a9988c6f
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Icosahedron
+    100002: Icosahedron_Subdiv
+    100004: Icosahedron_Subdiv2
+    100006: Icosahedron_Subdiv3
+    100008: Icosahedron_Subdiv4
+    100010: //RootNode
+    100012: Plane_1K
+    100014: Plane_4K
+    100016: Kvant_Cylinder_512
+    100018: Kvant_Icosphere_0
+    100020: Kvant_Icosphere_1
+    100022: Kvant_Icosphere_2
+    100024: Kvant_Icosphere_3
+    100026: Kvant_Icosphere_4
+    100028: Kvant_Plane_1K
+    100030: Kvant_Plane_4K
+    100032: Kvant_Cylinder_2000
+    100034: Kvant_Cylinder_500
+    100036: Kvant_Icosphere_5
+    400000: Icosahedron
+    400002: Icosahedron_Subdiv
+    400004: Icosahedron_Subdiv2
+    400006: Icosahedron_Subdiv3
+    400008: Icosahedron_Subdiv4
+    400010: //RootNode
+    400012: Plane_1K
+    400014: Plane_4K
+    400016: Kvant_Cylinder_512
+    400018: Kvant_Icosphere_0
+    400020: Kvant_Icosphere_1
+    400022: Kvant_Icosphere_2
+    400024: Kvant_Icosphere_3
+    400026: Kvant_Icosphere_4
+    400028: Kvant_Plane_1K
+    400030: Kvant_Plane_4K
+    400032: Kvant_Cylinder_2000
+    400034: Kvant_Cylinder_500
+    400036: Kvant_Icosphere_5
+    2300000: Icosahedron
+    2300002: Icosahedron_Subdiv
+    2300004: Icosahedron_Subdiv2
+    2300006: Icosahedron_Subdiv3
+    2300008: Icosahedron_Subdiv4
+    2300010: Plane_1K
+    2300012: Plane_4K
+    2300014: Kvant_Cylinder_512
+    2300016: Kvant_Icosphere_0
+    2300018: Kvant_Icosphere_1
+    2300020: Kvant_Icosphere_2
+    2300022: Kvant_Icosphere_3
+    2300024: Kvant_Icosphere_4
+    2300026: Kvant_Plane_1K
+    2300028: Kvant_Plane_4K
+    2300030: Kvant_Cylinder_2000
+    2300032: Kvant_Cylinder_500
+    2300034: Kvant_Icosphere_5
+    3300000: Icosahedron
+    3300002: Icosahedron_Subdiv
+    3300004: Icosahedron_Subdiv2
+    3300006: Icosahedron_Subdiv3
+    3300008: Icosahedron_Subdiv4
+    3300010: Plane_1K
+    3300012: Plane_4K
+    3300014: Kvant_Cylinder_512
+    3300016: Kvant_Icosphere_0
+    3300018: Kvant_Icosphere_1
+    3300020: Kvant_Icosphere_2
+    3300022: Kvant_Icosphere_3
+    3300024: Kvant_Icosphere_4
+    3300026: Kvant_Plane_1K
+    3300028: Kvant_Plane_4K
+    3300030: Kvant_Cylinder_2000
+    3300032: Kvant_Cylinder_500
+    3300034: Kvant_Icosphere_5
+    4300000: Plane_4K
+    4300002: Plane_1K
+    4300004: Icosahedron_Subdiv4
+    4300006: Icosahedron_Subdiv3
+    4300008: Icosahedron_Subdiv2
+    4300010: Icosahedron_Subdiv
+    4300012: Icosahedron
+    4300014: Kvant_Cylinder_512
+    4300016: Kvant_Plane_4K
+    4300018: Kvant_Plane_1K
+    4300020: Kvant_Icosphere_4
+    4300022: Kvant_Icosphere_3
+    4300024: Kvant_Icosphere_2
+    4300026: Kvant_Icosphere_1
+    4300028: Kvant_Icosphere_0
+    4300030: Kvant_Cylinder_2000
+    4300032: Kvant_Cylinder_500
+    4300034: Kvant_Icosphere_5
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .5
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 180
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
