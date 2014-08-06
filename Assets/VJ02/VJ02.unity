@@ -780,8 +780,8 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-  sensitivity: .949999988
-  decaySpeed: .5
+  sensitivity: .200000003
+  decaySpeed: 1
   showAudioOptions: 0
   headroom: 1
   dynamicRange: 17
@@ -2131,13 +2131,18 @@ MonoBehaviour:
       - time: 0
         value: 0
         inSlope: 0
-        outSlope: 1
-        tangentMode: 0
+        outSlope: -0
+        tangentMode: 21
+      - time: .5
+        value: 0
+        inSlope: 0
+        outSlope: 2
+        tangentMode: 21
       - time: 1
         value: 1
-        inSlope: 1
+        inSlope: 2
         outSlope: 0
-        tangentMode: 0
+        tangentMode: 21
       m_PreInfinity: 2
       m_PostInfinity: 2
     arbitraryVector: {x: 0, y: 1, z: 0}
@@ -2880,8 +2885,8 @@ MonoBehaviour:
     randomness: 0
   rotation:
     mode: 1
-    min: 0
-    max: 20
+    min: -5
+    max: 25
     curve:
       serializedVersion: 2
       m_Curve:
@@ -4341,7 +4346,7 @@ GameObject:
   - 114: {fileID: 649040380}
   - 114: {fileID: 649040379}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: '#K5 Fan'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4583,7 +4588,7 @@ GameObject:
   - 4: {fileID: 770772782}
   - 114: {fileID: 770772783}
   m_Layer: 0
-  m_Name: '#K4 Edge'
+  m_Name: '#K3 Edge'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4656,7 +4661,7 @@ MonoBehaviour:
   offset:
     _control: 1
     _midiChannel: 16
-    _knobIndex: 19
+    _knobIndex: 18
     _noteNumber: 40
     _inputAxis: Jump
     _curve:
@@ -5049,7 +5054,7 @@ GameObject:
   - 4: {fileID: 1093393091}
   - 114: {fileID: 1093393092}
   m_Layer: 0
-  m_Name: '#S4 Camera Adjust'
+  m_Name: '#S4 Camera Pitch'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5140,8 +5145,8 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-  sensitivity: .949999988
-  decaySpeed: .5
+  sensitivity: .200000003
+  decaySpeed: 1
   showAudioOptions: 0
   headroom: 1
   dynamicRange: 17
@@ -5765,12 +5770,12 @@ GameObject:
   - 114: {fileID: 1153694727}
   - 114: {fileID: 1153694726}
   m_Layer: 0
-  m_Name: '#K5 Cone Planter'
+  m_Name: '#K4 Cone Planter'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1153694725
 Transform:
   m_ObjectHideFlags: 0
@@ -5909,7 +5914,7 @@ MonoBehaviour:
   offset:
     _control: 1
     _midiChannel: 16
-    _knobIndex: 20
+    _knobIndex: 19
     _noteNumber: 40
     _inputAxis: Jump
     _curve:
@@ -8553,6 +8558,7 @@ GameObject:
   - 92: {fileID: 1517970172}
   - 124: {fileID: 1517970171}
   - 81: {fileID: 1517970170}
+  - 114: {fileID: 1517970192}
   - 114: {fileID: 1517970180}
   - 114: {fileID: 1517970189}
   - 114: {fileID: 1517970178}
@@ -9374,6 +9380,84 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reaktor: {fileID: 770772783}
+--- !u!114 &1517970192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1517970169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1b37565d4a24020a17e896ecd085d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reaktor:
+    _mode: 2
+    _reference: {fileID: 81373283}
+    _name: 
+    _forceUpdate: 1
+  fieldOfView:
+    enabled: 1
+    min: 45
+    max: 35
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 6.88205099
+        outSlope: 3.03030324
+        tangentMode: 21
+      - time: .329999983
+        value: 1
+        inSlope: 3.03030324
+        outSlope: -0
+        tangentMode: 21
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 21
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+  viewportWidth:
+    enabled: 0
+    min: 1
+    max: .200000003
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 1
+        tangentMode: 0
+      - time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+  viewportHeight:
+    enabled: 0
+    min: 1
+    max: .200000003
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 1
+        tangentMode: 0
+      - time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
 --- !u!1 &1520806903
 GameObject:
   m_ObjectHideFlags: 0
@@ -10857,13 +10941,18 @@ MonoBehaviour:
       - time: 0
         value: 0
         inSlope: 0
-        outSlope: 1
-        tangentMode: 0
+        outSlope: -0
+        tangentMode: 21
+      - time: .5
+        value: 0
+        inSlope: 0
+        outSlope: 2
+        tangentMode: 21
       - time: 1
         value: 1
-        inSlope: 1
+        inSlope: 2
         outSlope: 0
-        tangentMode: 0
+        tangentMode: 21
       m_PreInfinity: 2
       m_PostInfinity: 2
     arbitraryVector: {x: 0, y: 1, z: 0}
