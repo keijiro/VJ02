@@ -83,6 +83,14 @@ public class Planter : MonoBehaviour
         if (rotationMode == RotationMode.Random)
             rotation = Random.rotation;
 
+        // Remove dead objects in the queue.
+        while (objectPool.Count > 0)
+        {
+            var go = objectPool.Peek();
+            if (go != null) break;
+            objectPool.Dequeue();
+        }
+
         if (objectPool.Count >= maxObjects)
         {
             // Reuse the oldest object in the pool.

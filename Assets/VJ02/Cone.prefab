@@ -156,7 +156,7 @@ MonoBehaviour:
   lifetime: 5
   referencePoint: {x: 0, y: 0, z: 0}
   referenceObject: {fileID: 0}
-  referenceName: Cone Planter
+  referenceName: '#K5 Cone Planter'
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
