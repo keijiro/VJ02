@@ -25,76 +25,36 @@ using System.Collections;
 
 namespace Reaktion {
 
-[AddComponentMenu("Reaktion/Reaktor")]
+[AddComponentMenu("Reaktion/Reaktor/Reaktor")]
 public class Reaktor : MonoBehaviour
 {
-    #region Audio input settings
-
-    public bool autoBind = true;
-    public InjectorBase injector;
+    // Audio input settings.
+    public InjectorLink injector;
     public AnimationCurve audioCurve = AnimationCurve.Linear(0, 0, 1, 1);
 
-    #endregion
+    // Remote control settings.
+    public Remote gain;
+    public Remote offset;
 
-    #region Gain control settings
+    // General options.
+    public float sensitivity = 0.95f;
+    public float decaySpeed = 0.5f;
 
-    public bool gainEnabled = false;
-    public int gainKnobIndex = 2;
-    public MidiChannel gainKnobChannel = MidiChannel.All;
-    public string gainInputAxis;
-    public AnimationCurve gainCurve = AnimationCurve.Linear(0, 0, 1, 1);
-
-    #endregion
-
-    #region Offset control settings
-
-    public bool offsetEnabled = false;
-    public int offsetKnobIndex = 3;
-    public MidiChannel offsetKnobChannel = MidiChannel.All;
-    public string offsetInputAxis;
-    public AnimationCurve offsetCurve = AnimationCurve.Linear(0, 0, 1, 1);
-
-    #endregion
-
-    #region General option
-
-    public float sensitivity = 15.1f;
-    public float decaySpeed = 5.5f;
-
-    #endregion
-
-    #region Audio input options
-
+    // Audio input options.
     public bool showAudioOptions = false;
-    public float headroom = 2.0f;
-    public float dynamicRange = 16.0f;
+    public float headroom = 1.0f;
+    public float dynamicRange = 17.0f;
     public float lowerBound = -60.0f;
     public float falldown = 0.5f;
 
-    #endregion
+    // Output properties.
+    public float Output   { get { return output; } }
+    public float Peak     { get { return peak; } }
+    public float RawInput { get { return rawInput; } }
+    public float Gain     { get { return gain.level; } }
+    public float Offset   { get { return offset.level; } }
 
-    #region Output properties
-
-    public float Output {
-        get { return output; }
-    }
-    
-    public float Peak {
-        get { return peak; }
-    }
-
-    public float RawInput {
-        get { return rawInput; }
-    }
-
-    public float Gain {
-        get { return gain; }
-    }
-
-    public float Offset {
-        get { return offset; }
-    }
-
+    // Editor properties.
     public float Override {
         get { return Mathf.Clamp01(fakeInput); }
         set { fakeInput = value; }
@@ -113,41 +73,24 @@ public class Reaktor : MonoBehaviour
         get { return activeInstanceCount; }
     }
 
-    #endregion
-
-    #region Private variables and functions
-
+    // Internal state variables.
     float output;
     float peak;
     float rawInput;
-    float gain;
-    float offset;
     float fakeInput = -1.0f;
 
+    // Instance counter.
     static int activeInstanceCount;
-
-    #endregion
-
-    #region MonoBehaviour functions
 
     void Start()
     {
-        // Search for an injector.
-        if (autoBind)
-        {
-            injector = GetComponentInChildren<InjectorBase>();
-            if (injector == null)
-            {
-                injector = GetComponentInParent<InjectorBase>();
-                if (injector == null)
-                    injector = FindObjectOfType<InjectorBase>();
-            }
-        }
+        injector.Initialize(this);
+        gain.Reset(1);
+        offset.Reset(0);
 
         // Begins with the lowest level.
         peak = lowerBound + dynamicRange + headroom;
         rawInput = -1e12f;
-        gain = 1.0f;
     }
 
     void Update()
@@ -155,7 +98,7 @@ public class Reaktor : MonoBehaviour
         float input = 0.0f;
 
         // Audio input.
-        rawInput = injector ? injector.DbLevel : -1e12f;
+        rawInput = injector.DbLevel;
 
         // Check the peak level.
         peak -= Time.deltaTime * falldown;
@@ -165,33 +108,24 @@ public class Reaktor : MonoBehaviour
         input = (rawInput - peak + headroom + dynamicRange) / dynamicRange;
         input = audioCurve.Evaluate(Mathf.Clamp01(input));
 
-        // MIDI CC input.
-        if (gainEnabled)
-        {
-            gain = MidiJack.GetKnob(gainKnobChannel, gainKnobIndex, 1.0f);
-            if (!string.IsNullOrEmpty(gainInputAxis))
-                gain = Mathf.Clamp01(gain + Input.GetAxis(gainInputAxis));
-            gain = gainCurve.Evaluate(gain);
-            input *= gain;
-        }
-        if (offsetEnabled)
-        {
-            offset = MidiJack.GetKnob(offsetKnobChannel, offsetKnobIndex);
-            if (!string.IsNullOrEmpty(offsetInputAxis))
-                offset = Mathf.Clamp01(offset + Input.GetAxis(offsetInputAxis));
-            offset = offsetCurve.Evaluate(offset);
-            input += offset;
-        }
+        // Remote controls.
+        gain.Update();
+        offset.Update();
+
+        input *= gain.level;
+        input += offset.level;
 
         // Make output.
         input = Mathf.Clamp01(fakeInput < 0.0f ? input : fakeInput);
 
-        if (sensitivity > 0.0f)
+        if (sensitivity < 1.0f)
         {
-            input -= (input - output) * Mathf.Exp(-sensitivity * Time.deltaTime);
+            var coeff = Mathf.Pow(sensitivity, 2.3f) * -128;
+            input -= (input - output) * Mathf.Exp(coeff * Time.deltaTime);
         }
 
-        output = Mathf.Max(input, output - Time.deltaTime * decaySpeed);
+        var speed = decaySpeed < 1.0f ? decaySpeed * 10 + 0.5f : 100.0f;
+        output = Mathf.Max(input, output - Time.deltaTime * speed);
     }
 
     void OnEnable()
@@ -204,17 +138,11 @@ public class Reaktor : MonoBehaviour
         activeInstanceCount--;
     }
 
-    #endregion
-
-    #region Public functions
-
     // Stop overriding.
     public void StopOverride()
     {
         fakeInput = -1.0f;
     }
-
-    #endregion
 }
 
 } // namespace Reaktion

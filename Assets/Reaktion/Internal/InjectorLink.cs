@@ -25,14 +25,14 @@ using System.Collections;
 
 namespace Reaktion {
 
-// A class used to reference a Reaktor from gears.
+// A class used to reference an Injector from Reaktors.
 [System.Serializable]
-public class ReaktorLink : GenericLink<Reaktor>
+public class InjectorLink : GenericLink<InjectorBase>
 {
-    // Get a output value from the Reaktor.
-    public float Output {
+    // Get a output dB level from the Injector.
+    public float DbLevel {
         get {
-            return linkedObject ? linkedObject.Output : 0.0f;
+            return linkedObject ? linkedObject.DbLevel : -1e12f;
         }
     }
 }

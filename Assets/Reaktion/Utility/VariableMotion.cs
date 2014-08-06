@@ -112,7 +112,8 @@ public class VariableMotion : MonoBehaviour
     Quaternion previousRotation;
     Vector3 initialScale;
 
-    void OnEnable()
+    // Rewind the animation.
+    public void Rewind()
     {
         // Initialization.
         position.Initialize();
@@ -128,12 +129,9 @@ public class VariableMotion : MonoBehaviour
         ApplyTransform();
     }
 
-    public void Rewind()
+    void OnEnable()
     {
-        position.Initialize();
-        rotation.Initialize();
-        scale.Initialize();
-        ApplyTransform();
+        Rewind();
     }
 
     void Update()
