@@ -1,14 +1,19 @@
-﻿Shader "Custom/VJ02 Standard"
+﻿//
+// VJ02 standard shader
+//
+
+Shader "Custom/VJ02 Standard"
 {
     Properties
     {
-        _Color      ("Albedo",               Color) = (1, 1, 1, 1)
-        _DiffEnvTex ("Diffuse Envmap",       Cube)  = "gray"{}
-        _DiffRef    ("Diffuse Reflectance",  Float) = 1
-        _SpecEnvTex ("Specular Envmap",      Cube)  = "gray"{}
-        _SpecRef    ("Specular Reflectance", Float) = 1
-        _LodLevel   ("Specular Roughness",   Float) = 1
-        _Fresnel    ("Fresnel Coefficient",  Float) = 5
+        _Color      ("Albedo",               Color)  = (1, 1, 1, 1)
+        _DiffEnvTex ("Diffuse Envmap",       Cube)   = "gray"{}
+        _DiffRef    ("Diffuse Reflectance",  Float)  = 1
+
+        _SpecEnvTex ("Specular Envmap",      Cube)   = "gray"{}
+        _SpecRef    ("Specular Reflectance", Float)  = 1
+        _LodLevel   ("Specular Roughness",   Float)  = 1
+        _Fresnel    ("Fresnel Coefficient",  Float)  = 5
     }
     SubShader
     {
@@ -23,15 +28,18 @@
         float4x4 _VJ02_EnvMapMatrix;
         float _VJ02_Exposure;
 
-        // Material properties.
+        // Diffuse lighting parameters.
         float4 _Color;
         samplerCUBE _DiffEnvTex;
         float _DiffRef;
+
+        // Specular lighting parameters.
         samplerCUBE _SpecEnvTex;
         float _SpecRef;
         float _LodLevel;
         float _Fresnel;
 
+        // Sampling function for RGBM encoded texels.
         float3 SampleRGBM(float4 c)
         {
             float e = c.a * 8 * _VJ02_Exposure;
@@ -40,37 +48,29 @@
             return c.rgb * lin_e;
         }
 
+        // Lighting model function.
         half4 LightingVJ02(SurfaceOutput s, half3 lightDir, half3 viewDir, half atten)
         {
-            float3 n = normalize(s.Normal);
-            float3 v = normalize(viewDir);
+            // Variables.
+            float3 v_n = normalize(s.Normal);
+            float3x3 m_env = _VJ02_EnvMapMatrix;
 
-            float3x3 env_mtx = _VJ02_EnvMapMatrix;
+            // Diffuse lighting.
+            float3 diff = SampleRGBM(texCUBE(_DiffEnvTex, mul(m_env, v_n))) * _DiffRef;
 
-            float3 diff = SampleRGBM(texCUBE(_DiffEnvTex, mul(env_mtx, s.Normal))) * _DiffRef;
+            // Specular lighting.
+            float4 v_r = float4(mul(m_env, reflect(-viewDir, v_n)), _LodLevel);
+            float3 spec = SampleRGBM(texCUBElod(_SpecEnvTex, v_r)) * _SpecRef;
 
-            float4 r_dir = float4(mul(env_mtx, reflect(-v, n)), _LodLevel);
-            float3 spec = SampleRGBM(texCUBElod(_SpecEnvTex, r_dir)) * _SpecRef;
-            
-            float fr = pow(1 - dot(v, n), _Fresnel);
+            // Fresnel factor.
+            float fr = pow(1 - dot(viewDir, v_n), _Fresnel);
 
-            half4 c;
-            c.rgb = s.Albedo * diff + spec * atten * fr;
-            c.a = s.Alpha;
-
-            return c;
+            return half4(_Color.rgb * diff + spec * atten * fr, _Color.a);
         }
 
-        struct Input
-        {
-            float dummy;
-        };
-
-        void surf (Input IN, inout SurfaceOutput o)
-        {
-            o.Albedo = _Color.rgb;
-            o.Alpha = _Color.a;
-        }
+        // Nothing to do with the surface function.
+        struct Input { float2 uv_MainTex; };
+        void surf(Input IN, inout SurfaceOutput o) { }
 
         ENDCG
     } 

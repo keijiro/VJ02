@@ -125,6 +125,10 @@ public class KvantGenericDeformer : MonoBehaviour
             mesh.SetIndices(index2, MeshTopology.Triangles, 0);
         }
 
+        // Temporary calculate the normals and bounds.
+        mesh.RecalculateNormals();
+        mesh.RecalculateBounds();
+
         // Set the new mesh to the renderer.
         meshFilter.sharedMesh = mesh;
     }
