@@ -2701,10 +2701,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 463210525}
   - 33: {fileID: 463210524}
-  - 64: {fileID: 463210523}
   - 23: {fileID: 463210522}
-  m_Layer: 0
-  m_Name: Plane
+  m_Layer: 8
+  m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2730,19 +2729,6 @@ Renderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!64 &463210523
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 463210521}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &463210524
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8573,7 +8559,6 @@ GameObject:
   - 114: {fileID: 1517970185}
   - 114: {fileID: 1517970183}
   - 114: {fileID: 1517970184}
-  - 114: {fileID: 1517970188}
   - 114: {fileID: 1517970181}
   - 114: {fileID: 1517970187}
   m_Layer: 0
@@ -9243,19 +9228,6 @@ MonoBehaviour:
   antiAliasing: 1
   drawGameView: 0
   previewOnInspector: 0
---- !u!114 &1517970188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1517970169}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca07055447e274825bacd4c86b9d279e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shader: {fileID: 4800000, guid: 78db9cb22f2fe4ef7bc5d12f355d446e, type: 3}
-  overlay: {fileID: 2800000, guid: 3baae10a09e8a491da249c1b62a5e15b, type: 3}
 --- !u!114 &1517970189
 MonoBehaviour:
   m_ObjectHideFlags: 0
