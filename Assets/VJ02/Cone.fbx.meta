@@ -4,10 +4,20 @@ ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Cone
+    100004: Pyramid
     400000: //RootNode
+    400002: Cone
+    400004: Pyramid
     2300000: //RootNode
+    2300002: Cone
+    2300004: Pyramid
     3300000: //RootNode
+    3300002: Cone
+    3300004: Pyramid
     4300000: Cone.001
+    4300002: Cone
+    4300004: Pyramid
     9500000: //RootNode
   materials:
     importMaterials: 0
@@ -42,7 +52,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
   tangentSpace:
-    normalSmoothAngle: 60
+    normalSmoothAngle: 0
     splitTangentsAcrossUV: 1
     normalImportMode: 1
     tangentImportMode: 1

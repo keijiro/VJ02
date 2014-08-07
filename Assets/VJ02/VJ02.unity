@@ -4205,14 +4205,14 @@ MonoBehaviour:
     _curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - time: .00999999978
         value: 0
         inSlope: 0
-        outSlope: 4
+        outSlope: 4.16666651
         tangentMode: 21
       - time: .25
         value: 1
-        inSlope: 4
+        inSlope: 4.16666651
         outSlope: -0
         tangentMode: 21
       - time: 1
@@ -7327,7 +7327,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1153694724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.370000005, z: 2}
+  m_LocalPosition: {x: 1.5, y: -1, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1879721324}

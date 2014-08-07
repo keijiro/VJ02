@@ -25,9 +25,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: -.286027044, y: -.646675169, z: -.646674812, w: .286027193}
-  m_LocalPosition: {x: 0, y: .356429994, z: 0}
-  m_LocalScale: {x: .5, y: .5, z: .5}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -57,7 +57,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Mesh: {fileID: 4300000, guid: 5291363b0300a494bae2fdfae1ecf6c1, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 5291363b0300a494bae2fdfae1ecf6c1, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86,10 +86,10 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-    amplitude: .74000001
+    amplitude: 1
     speed: 2.8499999
     arbitraryVector: {x: 0, y: 1, z: 0}
-    randomness: .523999989
+    randomness: .964999974
   rotation:
     mode: 2
     curve:
@@ -156,7 +156,7 @@ MonoBehaviour:
   lifetime: 5
   referencePoint: {x: 0, y: 0, z: 0}
   referenceObject: {fileID: 0}
-  referenceName: '#K4 Cone Planter'
+  referenceName: '#S1 Origin'
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
