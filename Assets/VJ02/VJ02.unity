@@ -5617,8 +5617,8 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-  sensitivity: .949999988
-  decaySpeed: .5
+  sensitivity: .800000012
+  decaySpeed: 1
   showAudioOptions: 0
   headroom: 1
   dynamicRange: 17
@@ -7031,8 +7031,8 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-  sensitivity: .949999988
-  decaySpeed: .5
+  sensitivity: .800000012
+  decaySpeed: 1
   showAudioOptions: 0
   headroom: 1
   dynamicRange: 17
@@ -14713,8 +14713,8 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-  sensitivity: .949999988
-  decaySpeed: .5
+  sensitivity: .600000024
+  decaySpeed: 1
   showAudioOptions: 0
   headroom: 1
   dynamicRange: 17
