@@ -4,25 +4,29 @@ using System.Collections;
 [RequireComponent(typeof(EdgeDetectEffectNormals))]
 public class EdgeDetectEffectGear : MonoBehaviour
 {
-    public Reaktion.Reaktor reaktor;
+    public Reaktion.ReaktorLink reaktor;
 
-    EdgeDetectEffectNormals fx;
+    EdgeDetectEffectNormals edge;
+    DepthOfFieldScatter dof;
 
     void Awake()
     {
-        fx = GetComponent<EdgeDetectEffectNormals>();
+        edge = GetComponent<EdgeDetectEffectNormals>();
+        dof = GetComponent<DepthOfFieldScatter>();
     }
 
     void Update()
     {
         if (reaktor.Output > 0.1f)
         {
-            fx.enabled = true;
-            fx.edgesOnly = reaktor.Output;
+            edge.enabled = true;
+            edge.edgesOnly = reaktor.Output;
+            if (dof) dof.enabled = false;
         }
         else
         {
-            fx.enabled = false;
+            edge.enabled = false;
+            if (dof) dof.enabled = true;
         }
     }
 }

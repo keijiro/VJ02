@@ -156,7 +156,7 @@ public class Planter : MonoBehaviour
         objectPool = new Queue<GameObject>();
     }
 
-    void Start()
+    void OnEnable()
     {
         previousPosition = transform.position;
         previousRotation = transform.rotation;
