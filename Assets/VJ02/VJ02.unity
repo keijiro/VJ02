@@ -4030,6 +4030,7 @@ GameObject:
   - 4: {fileID: 583418740}
   - 114: {fileID: 583418741}
   - 114: {fileID: 583418742}
+  - 114: {fileID: 583418745}
   - 114: {fileID: 583418744}
   - 114: {fileID: 583418743}
   m_Layer: 0
@@ -4063,7 +4064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 100000, guid: 715aea95d78d346de934ddc9a3fd6b06, type: 2}
+  - {fileID: 100002, guid: 8d7ea1bf9bd7343148a9349a4c10dda7, type: 2}
   _maxObjects: 200
   distributionMode: 2
   _distributionRange: {x: 1.20000005, y: 1.20000005}
@@ -4176,8 +4177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   injector:
-    _mode: 0
-    _reference: {fileID: 0}
+    _mode: 2
+    _reference: {fileID: 469306687}
     _name: 
     _forceUpdate: 1
   audioCurve:
@@ -4196,9 +4197,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   gain:
-    _control: 0
+    _control: 1
     _midiChannel: 16
-    _knobIndex: 2
+    _knobIndex: 19
     _noteNumber: 40
     _inputAxis: Jump
     _curve:
@@ -4207,13 +4208,18 @@ MonoBehaviour:
       - time: 0
         value: 0
         inSlope: 0
-        outSlope: 1
-        tangentMode: 0
+        outSlope: 4
+        tangentMode: 21
+      - time: .25
+        value: 1
+        inSlope: 4
+        outSlope: -0
+        tangentMode: 21
       - time: 1
         value: 1
-        inSlope: 1
+        inSlope: 0
         outSlope: 0
-        tangentMode: 0
+        tangentMode: 21
       m_PreInfinity: 2
       m_PostInfinity: 2
   offset:
@@ -4227,6 +4233,58 @@ MonoBehaviour:
       m_Curve:
       - time: 0
         value: 0
+        inSlope: 5.00000191
+        outSlope: -0
+        tangentMode: 21
+      - time: .25
+        value: 0
+        inSlope: 0
+        outSlope: 2
+        tangentMode: 21
+      - time: .75
+        value: 1
+        inSlope: 2
+        outSlope: -0
+        tangentMode: 21
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 21
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+  sensitivity: .949999988
+  decaySpeed: .400000006
+  showAudioOptions: 0
+  headroom: 1
+  dynamicRange: 17
+  lowerBound: -60
+  falldown: .5
+--- !u!114 &583418745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 583418739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb99621fcb1f4503985e79e170fa93d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reaktor:
+    _mode: 2
+    _reference: {fileID: 456345318}
+    _name: 
+    _forceUpdate: 1
+  position:
+    enabled: 0
+    min: 0
+    max: 1
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
         inSlope: 0
         outSlope: 1
         tangentMode: 0
@@ -4237,13 +4295,25 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-  sensitivity: .949999988
-  decaySpeed: 1
-  showAudioOptions: 0
-  headroom: 1
-  dynamicRange: 17
-  lowerBound: -60
-  falldown: .5
+  rotation:
+    enabled: 1
+    min: 0
+    max: -120
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 1
+        tangentMode: 0
+      - time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
 --- !u!1 &602045343
 GameObject:
   m_ObjectHideFlags: 0
