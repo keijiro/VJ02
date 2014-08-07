@@ -72,7 +72,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conditionType: 0
   referenceType: 4
-  maxDistance: 70
+  maxDistance: 50
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 5, y: 5, z: 5}

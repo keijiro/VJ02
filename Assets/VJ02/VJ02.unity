@@ -4066,7 +4066,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 715aea95d78d346de934ddc9a3fd6b06, type: 2}
   _maxObjects: 200
   distributionMode: 2
-  _distributionRange: {x: 1.5, y: 1.5}
+  _distributionRange: {x: 1.20000005, y: 1.20000005}
   _gridSpace: .5
   rotationMode: 1
   intervalMode: 0
@@ -4238,7 +4238,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
   sensitivity: .949999988
-  decaySpeed: .5
+  decaySpeed: 1
   showAudioOptions: 0
   headroom: 1
   dynamicRange: 17
