@@ -8,26 +8,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 114: {fileID: 11400000}
-  - 114: {fileID: 11400004}
-  m_Layer: 0
-  m_Name: Blade
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &100002
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 400002}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
+  - 114: {fileID: 11400004}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: Blade
   m_TagString: Untagged
@@ -43,29 +28,16 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 400002}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
---- !u!4 &400002
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_LocalRotation: {x: .198107675, y: .138716474, z: .138716474, w: .960348308}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .400000006, y: .400000006, z: .400000006}
+  m_LocalScale: {x: .400000036, y: .400000006, z: .399999976}
   m_Children: []
-  m_Father: {fileID: 400000}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!23 &2300000
 Renderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
+  m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 0
@@ -85,9 +57,52 @@ MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
+  m_GameObject: {fileID: 100000}
   m_Mesh: {fileID: 4300040, guid: fa2aa91d0af2e4b9e8e3186761e52345, type: 3}
 --- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b440719a9ec144adc9ce347c882d7728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionType: 0
+  referenceType: 4
+  maxDistance: 70
+  bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 5, y: 5, z: 5}
+  lifetime: 5
+  referencePoint: {x: 0, y: 0, z: 0}
+  referenceObject: {fileID: 0}
+  referenceName: '#S1 Origin'
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bace80d1c2d94c51ab17a01a6901499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  density: .100000001
+  linearFlow: {x: 0, y: .200000003, z: 0}
+  displacement: {x: .5, y: .5, z: .5}
+  rotation: {x: 0, y: 0, z: 0}
+  scale: {x: 0, y: 0, z: 0}
+  coeffDisplacement: 1
+  coeffRotation: 1.10000002
+  coeffScale: 1.20000005
+  useLocalCoordinate: 1
+  scaleByShader: 0
+  scalePropertyName: _Scale
+--- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -157,57 +172,14 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-    amplitude: 1
+    amplitude: .400000006
     speed: 2
     arbitraryVector: {x: 1, y: 1, z: 1}
     randomness: 0
   scaleByShader: 0
   scalePropertyName: _Scale
-  useLocalCoordinate: 1
+  useLocalCoordinate: 0
   useDifferentials: 0
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bace80d1c2d94c51ab17a01a6901499, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  density: .100000001
-  linearFlow: {x: 0, y: .200000003, z: 0}
-  displacement: {x: .5, y: .5, z: .5}
-  rotation: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
-  coeffDisplacement: 1
-  coeffRotation: 1.10000002
-  coeffScale: 1.20000005
-  useLocalCoordinate: 1
-  scaleByShader: 0
-  scalePropertyName: _Scale
---- !u!114 &11400004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b440719a9ec144adc9ce347c882d7728, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conditionType: 0
-  referenceType: 4
-  maxDistance: 70
-  bounds:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 5, y: 5, z: 5}
-  lifetime: 5
-  referencePoint: {x: 0, y: 0, z: 0}
-  referenceObject: {fileID: 0}
-  referenceName: '#S1 Origin'
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
