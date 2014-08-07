@@ -168,7 +168,7 @@ public class Planter : MonoBehaviour
 
         // Get delta value on the interval parameter.
         var delta = intervalMode == IntervalMode.Distance ?
-            Vector3.Distance(transform.position, previousPosition) : Time.deltaTime;
+            Mathf.Abs(transform.position.z - previousPosition.z) : Time.deltaTime;
 
         // Look for the next plant position between frames.
         for (var t = interval; t < intervalCounter + delta ; t += interval)

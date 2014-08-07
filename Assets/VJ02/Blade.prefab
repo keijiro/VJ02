@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: Blade
   m_TagString: Untagged
@@ -55,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: .198107675, y: .138716474, z: .138716474, w: .960348308}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .5, y: .5, z: .5}
+  m_LocalScale: {x: .400000006, y: .400000006, z: .400000006}
   m_Children: []
   m_Father: {fileID: 400000}
   m_RootOrder: 0
@@ -177,8 +178,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   density: .100000001
   linearFlow: {x: 0, y: .200000003, z: 0}
-  displacement: {x: 1, y: 1, z: 1}
-  rotation: {x: 60, y: 60, z: 60}
+  displacement: {x: .5, y: .5, z: .5}
+  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 0, y: 0, z: 0}
   coeffDisplacement: 1
   coeffRotation: 1.10000002
@@ -186,6 +187,27 @@ MonoBehaviour:
   useLocalCoordinate: 1
   scaleByShader: 0
   scalePropertyName: _Scale
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b440719a9ec144adc9ce347c882d7728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditionType: 0
+  referenceType: 4
+  maxDistance: 70
+  bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 5, y: 5, z: 5}
+  lifetime: 5
+  referencePoint: {x: 0, y: 0, z: 0}
+  referenceObject: {fileID: 0}
+  referenceName: '#S1 Origin'
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
