@@ -76,6 +76,9 @@ public class SonarFx : MonoBehaviour
     int waveVectorID;
     int addColorID;
 
+    // Private variables
+    float time;
+
     void Awake()
     {
         baseColorID = Shader.PropertyToID("_SonarBaseColor");
@@ -98,11 +101,13 @@ public class SonarFx : MonoBehaviour
 
     void Update()
     {
+        time += _waveSpeed * Time.deltaTime;
+
         Shader.SetGlobalColor(baseColorID, _baseColor);
         Shader.SetGlobalColor(waveColorID, _waveColor);
         Shader.SetGlobalColor(addColorID, _addColor);
 
-        var param = new Vector4(_waveAmplitude, _waveExponent, _waveInterval, _waveSpeed);
+        var param = new Vector4(_waveAmplitude, _waveExponent, _waveInterval, time);
         Shader.SetGlobalVector(waveParamsID, param);
 
         if (_mode == SonarMode.Directional)

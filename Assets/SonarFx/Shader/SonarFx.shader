@@ -46,7 +46,7 @@ Shader "Hidden/SonarFX"
 
         float3 _SonarBaseColor;
         float3 _SonarWaveColor;
-        float4 _SonarWaveParams; // Amp, Exp, Interval, Speed
+        float4 _SonarWaveParams; // Amp, Exp, Interval, Time
         float3 _SonarWaveVector;
         float3 _SonarAddColor;
 
@@ -59,7 +59,7 @@ Shader "Hidden/SonarFX"
 #endif
 
             // Moving wave.
-            w -= _Time.y * _SonarWaveParams.w;
+            w -= _SonarWaveParams.w;
 
             // Divide with the interval.
             w = mod(w, _SonarWaveParams.z) / _SonarWaveParams.z;

@@ -7,10 +7,10 @@ Shader "Custom/VJ02 Standard"
     Properties
     {
         _Color      ("Albedo",               Color)  = (1, 1, 1, 1)
-        _DiffEnvTex ("Diffuse Envmap",       Cube)   = "gray"{}
+//        _DiffEnvTex ("Diffuse Envmap",       Cube)   = "gray"{}
         _DiffRef    ("Diffuse Reflectance",  Float)  = 1
 
-        _SpecEnvTex ("Specular Envmap",      Cube)   = "gray"{}
+//        _SpecEnvTex ("Specular Envmap",      Cube)   = "gray"{}
         _SpecRef    ("Specular Reflectance", Float)  = 1
         _LodLevel   ("Specular Roughness",   Float)  = 1
         _Fresnel    ("Fresnel Coefficient",  Float)  = 5
@@ -25,16 +25,16 @@ Shader "Custom/VJ02 Standard"
         #pragma glsl
 
         // Global property.
+        samplerCUBE _VJ02_DiffEnvTex;
+        samplerCUBE _VJ02_SpecEnvTex;
         float4x4 _VJ02_EnvMapMatrix;
         float _VJ02_Exposure;
 
         // Diffuse lighting parameters.
         float4 _Color;
-        samplerCUBE _DiffEnvTex;
         float _DiffRef;
 
         // Specular lighting parameters.
-        samplerCUBE _SpecEnvTex;
         float _SpecRef;
         float _LodLevel;
         float _Fresnel;
@@ -56,11 +56,11 @@ Shader "Custom/VJ02 Standard"
             float3x3 m_env = _VJ02_EnvMapMatrix;
 
             // Diffuse lighting.
-            float3 diff = SampleRGBM(texCUBE(_DiffEnvTex, mul(m_env, v_n))) * _DiffRef;
+            float3 diff = SampleRGBM(texCUBE(_VJ02_DiffEnvTex, mul(m_env, v_n))) * _DiffRef;
 
             // Specular lighting.
             float4 v_r = float4(mul(m_env, reflect(-viewDir, v_n)), _LodLevel);
-            float3 spec = SampleRGBM(texCUBElod(_SpecEnvTex, v_r)) * _SpecRef;
+            float3 spec = SampleRGBM(texCUBElod(_VJ02_SpecEnvTex, v_r)) * _SpecRef;
 
             // Fresnel factor.
             float fr = pow(1 - dot(viewDir, v_n), _Fresnel);

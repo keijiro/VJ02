@@ -1,10 +1,15 @@
 using UnityEngine;
 using System.Collections;
 
-public class AmbientSwitcher : MonoBehaviour
+public class VJ02AmbienceGear : MonoBehaviour
 {
-    public Reaktion.Reaktor reaktor;
+    public Reaktion.ReaktorLink reaktor;
     public Gradient gradient;
+
+    void Start()
+    {
+        reaktor.Initialize(this);
+    }
 
     void Update()
     {
