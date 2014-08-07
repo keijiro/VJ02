@@ -2930,7 +2930,7 @@ MonoBehaviour:
   emissionRate:
     enabled: 1
     min: 0
-    max: 100
+    max: 120
     curve:
       serializedVersion: 2
       m_Curve:
@@ -3164,7 +3164,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: .0149999997
+      scalar: .0199999996
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3179,7 +3179,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .666666687
+          value: .75
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -7087,7 +7087,7 @@ MonoBehaviour:
   m_ShadowmapMode: 0
   m_Cameras:
   - {fileID: 1517970173}
-  m_CurrentCamera: {fileID: 0}
+  m_CurrentCamera: {fileID: 1517970173}
   m_Size: {x: 15, y: 10, z: 13}
   m_SpotNear: .100000001
   m_SpotFar: 1
@@ -11468,7 +11468,7 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-  sensitivity: .800000012
+  sensitivity: .5
   decaySpeed: 1
   showAudioOptions: 0
   headroom: 1
