@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reaktor:
     _mode: 1
-    _reference: {fileID: 755552955}
+    _reference: {fileID: 0}
     _name: 
     _forceUpdate: 1
   optionType: 2
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reaktor:
     _mode: 1
-    _reference: {fileID: 755552955}
+    _reference: {fileID: 0}
     _name: 
     _forceUpdate: 1
   optionType: 2
@@ -397,7 +397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reaktor:
     _mode: 1
-    _reference: {fileID: 755552955}
+    _reference: {fileID: 0}
     _name: 
     _forceUpdate: 1
   position:
@@ -1961,7 +1961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reaktor:
     _mode: 1
-    _reference: {fileID: 755552955}
+    _reference: {fileID: 0}
     _name: 
     _forceUpdate: 1
   burst:
@@ -2830,6 +2830,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 469306686}
   - 114: {fileID: 469306685}
+  - 114: {fileID: 469306688}
   - 114: {fileID: 469306687}
   m_Layer: 0
   m_Name: Audio Input
@@ -2850,7 +2851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   channel: 0
-  bufferSize: 320
+  bufferSize: 512
 --- !u!4 &469306686
 Transform:
   m_ObjectHideFlags: 0
@@ -2860,8 +2861,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 755552956}
+  m_Children: []
   m_Father: {fileID: 1764749429}
   m_RootOrder: 0
 --- !u!114 &469306687
@@ -2875,7 +2875,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ea4934aecd74a0ba1244d2dee655d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mute: 1
+  mute: 0
+--- !u!114 &469306688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 469306684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b611a96a1be824fc4b5137763ac40719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutoff: .340000004
+  q: 7
 --- !u!1 &533802584
 GameObject:
   m_ObjectHideFlags: 0
@@ -4515,7 +4528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reaktor:
     _mode: 1
-    _reference: {fileID: 755552955}
+    _reference: {fileID: 0}
     _name: 
     _forceUpdate: 1
   burst:
@@ -6040,114 +6053,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Reaktion.GenericCurveGear+VectorEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!1 &755552954
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 755552956}
-  - 114: {fileID: 755552955}
-  m_Layer: 0
-  m_Name: Audio Level
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &755552955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 755552954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a3ec3ae67a0841d8aa990e0f2e1089e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  injector:
-    _mode: 1
-    _reference: {fileID: 0}
-    _name: 
-    _forceUpdate: 0
-  audioCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  gain:
-    _control: 0
-    _midiChannel: 16
-    _knobIndex: 2
-    _noteNumber: 40
-    _inputAxis: Jump
-    _curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 1
-        tangentMode: 0
-      - time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 0
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-  offset:
-    _control: 0
-    _midiChannel: 16
-    _knobIndex: 2
-    _noteNumber: 40
-    _inputAxis: Jump
-    _curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 1
-        tangentMode: 0
-      - time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 0
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-  sensitivity: .949999988
-  decaySpeed: .160999998
-  showAudioOptions: 0
-  headroom: 1
-  dynamicRange: 17
-  lowerBound: -60
-  falldown: .5
---- !u!4 &755552956
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 755552954}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 469306686}
-  m_RootOrder: 0
 --- !u!1 &762350020
 GameObject:
   m_ObjectHideFlags: 0
@@ -14042,7 +13947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reaktor:
     _mode: 1
-    _reference: {fileID: 755552955}
+    _reference: {fileID: 0}
     _name: 
     _forceUpdate: 1
   burst:
