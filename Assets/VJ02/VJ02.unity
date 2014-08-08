@@ -3177,7 +3177,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: .0199999996
+      scalar: .0299999993
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3192,7 +3192,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .75
+          value: .666666687
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -4302,16 +4302,16 @@ MonoBehaviour:
       - time: .00999999978
         value: 0
         inSlope: 0
-        outSlope: 4.16666651
-        tangentMode: 21
-      - time: .25
-        value: 1
-        inSlope: 4.16666651
         outSlope: -0
+        tangentMode: 21
+      - time: .599999964
+        value: 0
+        inSlope: 0
+        outSlope: 2.49999976
         tangentMode: 21
       - time: 1
         value: 1
-        inSlope: 0
+        inSlope: 2.49999976
         outSlope: 0
         tangentMode: 21
       m_PreInfinity: 2
@@ -4328,21 +4328,21 @@ MonoBehaviour:
       - time: 0
         value: 0
         inSlope: 5.00000191
-        outSlope: -0
+        outSlope: 2.50000024
         tangentMode: 21
-      - time: .25
-        value: 0
-        inSlope: 0
-        outSlope: 2
-        tangentMode: 21
-      - time: .75
+      - time: .399999976
         value: 1
-        inSlope: 2
+        inSlope: 2.50000024
         outSlope: -0
+        tangentMode: 21
+      - time: .599999964
+        value: 1
+        inSlope: 0
+        outSlope: -2.49999976
         tangentMode: 21
       - time: 1
-        value: 1
-        inSlope: 0
+        value: 0
+        inSlope: -2.49999976
         outSlope: 0
         tangentMode: 21
       m_PreInfinity: 2
@@ -7584,7 +7584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 100000, guid: 54b054a8fb66745278696540e33faa29, type: 2}
-  _maxObjects: 50
+  _maxObjects: 70
   distributionMode: 1
   _distributionRange: {x: 5, y: 0}
   _gridSpace: 1
@@ -7614,11 +7614,11 @@ MonoBehaviour:
     - time: 0
       value: 2
       inSlope: .654906034
-      outSlope: -1.70000005
+      outSlope: -1.79999995
       tangentMode: 21
     - time: 1
-      value: .300000012
-      inSlope: -1.70000005
+      value: .200000003
+      inSlope: -1.79999995
       outSlope: 0
       tangentMode: 21
     m_PreInfinity: 2
@@ -15639,7 +15639,7 @@ MonoBehaviour:
   position:
     enabled: 1
     min: 0
-    max: 4
+    max: 5
     curve:
       serializedVersion: 2
       m_Curve:
