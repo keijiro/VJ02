@@ -10621,6 +10621,7 @@ GameObject:
   - 114: {fileID: 1517970177}
   - 114: {fileID: 1517970179}
   - 114: {fileID: 1517970186}
+  - 114: {fileID: 1517970184}
   - 114: {fileID: 1517970190}
   - 114: {fileID: 1517970191}
   - 114: {fileID: 1517970176}
@@ -10954,6 +10955,21 @@ MonoBehaviour:
   _waveSpeed: 5
   _addColor: {r: 0, g: 0, b: 0, a: 1}
   shader: {fileID: 4800000, guid: 6d12e7ab487bf49d18b89038af741a18, type: 3}
+--- !u!114 &1517970184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1517970169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce71793dc5def4861a8e82c412cb6ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1517970186}
+  args:
+  - {fileID: 1517970190}
+  - {fileID: 1517970182}
 --- !u!114 &1517970186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16350,7 +16366,6 @@ GameObject:
   - 4: {fileID: 2120498799}
   - 114: {fileID: 2120498804}
   - 114: {fileID: 2120498803}
-  - 114: {fileID: 2120498800}
   - 114: {fileID: 2120498802}
   - 114: {fileID: 2120498801}
   m_Layer: 0
@@ -16372,89 +16387,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1764749429}
   m_RootOrder: 8
---- !u!114 &2120498800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2120498798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcbea1f4bc98b455093b3b4b607ed9fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reaktor:
-    _mode: 1
-    _reference: {fileID: 0}
-    _name: 
-    _forceUpdate: 0
-  optionType: 0
-  curve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: Infinity
-      outSlope: Infinity
-      tangentMode: 31
-    - time: .00999999978
-      value: 0
-      inSlope: Infinity
-      outSlope: Infinity
-      tangentMode: 31
-    - time: 1
-      value: 0
-      inSlope: Infinity
-      outSlope: Infinity
-      tangentMode: 31
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  origin: {x: 0, y: 0, z: 0}
-  direction: {x: 1, y: 0, z: 0}
-  boolTarget:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1517970191}
-        m_MethodName: set_enabled
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_Enabled: 1
-      - m_Target: {fileID: 1517970186}
-        m_MethodName: set_enabled
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_Enabled: 1
-    m_TypeName: Reaktion.GenericCurveGear+BoolEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  intTarget:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Reaktion.GenericCurveGear+IntEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  floatTarget:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Reaktion.GenericCurveGear+FloatEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  vectorTarget:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Reaktion.GenericCurveGear+VectorEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &2120498801
 MonoBehaviour:
   m_ObjectHideFlags: 0
