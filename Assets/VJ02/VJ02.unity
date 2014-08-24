@@ -257,7 +257,7 @@ MonoBehaviour:
   gain:
     _control: 1
     _midiChannel: 16
-    _knobIndex: 2
+    _knobIndex: 1
     _noteNumber: 40
     _inputAxis: Jump
     _curve:
@@ -283,7 +283,7 @@ MonoBehaviour:
   offset:
     _control: 1
     _midiChannel: 16
-    _knobIndex: 2
+    _knobIndex: 1
     _noteNumber: 40
     _inputAxis: Jump
     _curve:
@@ -762,7 +762,7 @@ MonoBehaviour:
   offset:
     _control: 1
     _midiChannel: 16
-    _knobIndex: 3
+    _knobIndex: 2
     _noteNumber: 40
     _inputAxis: Jump
     _curve:
@@ -2415,7 +2415,7 @@ MonoBehaviour:
   gain:
     _control: 1
     _midiChannel: 16
-    _knobIndex: 5
+    _knobIndex: 4
     _noteNumber: 40
     _inputAxis: Jump
     _curve:
@@ -2821,7 +2821,7 @@ MonoBehaviour:
   offset:
     _control: 1
     _midiChannel: 16
-    _knobIndex: 5
+    _knobIndex: 4
     _noteNumber: 40
     _inputAxis: Jump
     _curve:
@@ -6336,9 +6336,9 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
   offset:
-    _control: 2
+    _control: 1
     _midiChannel: 16
-    _knobIndex: 40
+    _knobIndex: 32
     _noteNumber: 40
     _inputAxis: Jump
     _curve:
@@ -6852,7 +6852,7 @@ MonoBehaviour:
   offset:
     _control: 1
     _midiChannel: 16
-    _knobIndex: 4
+    _knobIndex: 3
     _noteNumber: 40
     _inputAxis: Jump
     _curve:
@@ -10203,9 +10203,9 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
   offset:
-    _control: 2
+    _control: 1
     _midiChannel: 16
-    _knobIndex: 2
+    _knobIndex: 39
     _noteNumber: 39
     _inputAxis: Jump
     _curve:
@@ -10600,7 +10600,7 @@ MonoBehaviour:
   offset:
     _control: 1
     _midiChannel: 16
-    _knobIndex: 7
+    _knobIndex: 6
     _noteNumber: 40
     _inputAxis: Jump
     _curve:
@@ -11427,9 +11427,9 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
   offset:
-    _control: 2
+    _control: 1
     _midiChannel: 16
-    _knobIndex: 2
+    _knobIndex: 38
     _noteNumber: 38
     _inputAxis: Jump
     _curve:
@@ -14283,7 +14283,7 @@ MonoBehaviour:
   offset:
     _control: 1
     _midiChannel: 16
-    _knobIndex: 8
+    _knobIndex: 7
     _noteNumber: 40
     _inputAxis: Jump
     _curve:
@@ -15645,9 +15645,9 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
   offset:
-    _control: 2
+    _control: 1
     _midiChannel: 16
-    _knobIndex: 40
+    _knobIndex: 33
     _noteNumber: 41
     _inputAxis: Jump
     _curve:
@@ -15789,7 +15789,7 @@ MonoBehaviour:
   offset:
     _control: 1
     _midiChannel: 16
-    _knobIndex: 1
+    _knobIndex: 0
     _noteNumber: 40
     _inputAxis: Jump
     _curve:
@@ -16479,9 +16479,9 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
   offset:
-    _control: 2
+    _control: 1
     _midiChannel: 16
-    _knobIndex: 2
+    _knobIndex: 37
     _noteNumber: 37
     _inputAxis: Jump
     _curve:
@@ -16833,7 +16833,7 @@ MonoBehaviour:
   offset:
     _control: 1
     _midiChannel: 16
-    _knobIndex: 6
+    _knobIndex: 5
     _noteNumber: 40
     _inputAxis: Jump
     _curve:
