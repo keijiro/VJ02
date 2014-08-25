@@ -22,6 +22,7 @@ Shader "Custom/VJ02 Standard"
         CGPROGRAM
 
         #pragma surface surf VJ02 noforwardadd noambient
+        #pragma target 3.0
         #pragma glsl
 
         // Global property.
@@ -53,7 +54,7 @@ Shader "Custom/VJ02 Standard"
         {
             // Variables.
             float3 v_n = normalize(s.Normal);
-            float3x3 m_env = _VJ02_EnvMapMatrix;
+            float3x3 m_env = (float3x3)_VJ02_EnvMapMatrix;
 
             // Diffuse lighting.
             float3 diff = SampleRGBM(texCUBE(_VJ02_DiffEnvTex, mul(m_env, v_n))) * _DiffRef;
