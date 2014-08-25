@@ -6,14 +6,11 @@ Shader "Custom/VJ02 Standard"
 {
     Properties
     {
-        _Color      ("Albedo",               Color)  = (1, 1, 1, 1)
-//        _DiffEnvTex ("Diffuse Envmap",       Cube)   = "gray"{}
-        _DiffRef    ("Diffuse Reflectance",  Float)  = 1
-
-//        _SpecEnvTex ("Specular Envmap",      Cube)   = "gray"{}
-        _SpecRef    ("Specular Reflectance", Float)  = 1
-        _LodLevel   ("Specular Roughness",   Float)  = 1
-        _Fresnel    ("Fresnel Coefficient",  Float)  = 5
+        _Color    ("Albedo",               Color)  = (1, 1, 1, 1)
+        _DiffRef  ("Diffuse Reflectance",  Float)  = 1
+        _SpecRef  ("Specular Reflectance", Float)  = 1
+        _LodLevel ("Specular Roughness",   Float)  = 1
+        _Fresnel  ("Fresnel Coefficient",  Float)  = 5
     }
     SubShader
     {
