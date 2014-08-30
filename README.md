@@ -62,6 +62,22 @@ Acknowledgements
 
 HDR images in [Assets/HDRI Envmaps] [7] are made by [Mr. Bluesummers] [8].
 
+Related Projects
+----------------
+
+VJ02 is made of many modules which I previously made. See each project pages for
+further information.
+
+- https://github.com/keijiro/ColorSuite
+- https://github.com/keijiro/Fragments
+- https://github.com/keijiro/UnityFxMeshSet
+- https://github.com/keijiro/GlitchFx
+- https://github.com/keijiro/Kvant
+- https://github.com/keijiro/MidiJack
+- https://github.com/keijiro/Reaktion
+- https://github.com/keijiro/SlicerFx
+- https://github.com/keijiro/SonarFx
+
 [1]: https://www.super-deluxe.com/room/3715/
 [2]: http://keijiro.github.io/VJ02/demo.gif
 [3]: https://vimeo.com/104780871
