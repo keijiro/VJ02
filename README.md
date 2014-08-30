@@ -5,7 +5,9 @@ VJ02 is VJing software made for [Channel #8] [1].
 
 ![Demo] [2]
 
-[Video (VJ02 on Vimeo)] [3]
+[Live Video at Channel #8 (YouTube)] [9]
+
+[Demo (Vimeo)] [3]
 
 The application package is available on the [Releases] [4] page, or you can build the app
 from the source project.
@@ -86,3 +88,4 @@ further information.
 [6]: http://keijiro.github.io/VJ02/reaktion-window.png
 [7]: https://github.com/keijiro/VJ02/tree/master/Assets/HDRI%20Envmaps
 [8]: http://www.mrbluesummers.com
+[9]: https://www.youtube.com/watch?v=jg0v-8Zb-qo
