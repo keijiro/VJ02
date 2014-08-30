@@ -57,9 +57,16 @@ These parameters are mapped to MIDI CCs.
 | Color Inversion      |  38 | S Button 7     |
 | Camera Shake         |  39 | S Button 8     |
 
+Acknowledgements
+----------------
+
+HDR images in [Assets/HDRI Envmaps] [7] are made by [Mr. Bluesummers] [8].
+
 [1]: https://www.super-deluxe.com/room/3715/
 [2]: http://keijiro.github.io/VJ02/demo.gif
 [3]: https://vimeo.com/104780871
 [4]: https://github.com/keijiro/VJ02/releases
 [5]: https://github.com/keijiro/Reaktion
 [6]: http://keijiro.github.io/VJ02/reaktion-window.png
+[7]: https://github.com/keijiro/VJ02/tree/master/Assets/HDRI%20Envmaps
+[8]: http://www.mrbluesummers.com
