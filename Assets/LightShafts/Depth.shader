@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Hidden/Depth" {
 SubShader {
     Tags { "RenderType"="Opaque" }
@@ -16,7 +18,7 @@ struct v2f {
 
 v2f vert (appdata_base v) {
     v2f o;
-    o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+    o.pos = UnityObjectToClipPos (v.vertex);
 
     // We want [0,1] linear depth, so that 0.5 is half way between near and far.
     COMPUTE_EYEDEPTH(o.depth);

@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Hidden/Final Interpolation" {
 Properties {
 	_ZTest ("", Float) = 8.0
@@ -66,7 +68,7 @@ v2f vert (appdata_img v)
 	o.pos = v.vertex;
 
 	#if defined(FRUSTUM_SHAFTS)
-		o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+		o.pos = UnityObjectToClipPos (v.vertex);
 		o.uv = o.pos.xyw;
 		FixFlip(o.uv.y);
 	#else
