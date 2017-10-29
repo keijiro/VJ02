@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Hidden/BrightPassFilter2"
 {
 	Properties 
@@ -16,14 +18,15 @@ Shader "Hidden/BrightPassFilter2"
 	};
 	
 	sampler2D _MainTex;	
+	half4     _MainTex_ST;
 	
 	half4 _Threshhold;
 		
 	v2f vert( appdata_img v ) 
 	{
 		v2f o;
-		o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
-		o.uv =  v.texcoord.xy;
+		o.pos = UnityObjectToClipPos(v.vertex);
+		o.uv = UnityStereoScreenSpaceUVAdjust(v.texcoord.xy, _MainTex_ST);
 		return o;
 	} 
 	
@@ -49,11 +52,9 @@ Shader "Hidden/BrightPassFilter2"
 		Pass 
  		{
 			ZTest Always Cull Off ZWrite Off
-			Fog { Mode off }      
 
 			CGPROGRAM
 
-			#pragma fragmentoption ARB_precision_hint_fastest
 			#pragma vertex vert
 			#pragma fragment fragScalarThresh
 
@@ -63,11 +64,9 @@ Shader "Hidden/BrightPassFilter2"
 		Pass 
  		{
 			ZTest Always Cull Off ZWrite Off
-			Fog { Mode off }      
 
 			CGPROGRAM
 
-			#pragma fragmentoption ARB_precision_hint_fastest
 			#pragma vertex vert
 			#pragma fragment fragColorThresh
 

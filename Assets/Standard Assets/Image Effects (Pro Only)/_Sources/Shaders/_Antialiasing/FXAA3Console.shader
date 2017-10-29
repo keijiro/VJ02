@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 
 
 /*============================================================================
@@ -38,15 +40,11 @@ Shader "Hidden/FXAA III (Console)" {
 	SubShader {
 		Pass {
 			ZTest Always Cull Off ZWrite Off
-			Fog { Mode off }
 		
 		CGPROGRAM
 		#pragma vertex vert
 		#pragma fragment frag
-		#pragma glsl
-		#pragma fragmentoption ARB_precision_hint_fastest
 		#pragma target 3.0
-		#pragma exclude_renderers d3d11_9x
 		
 		#include "UnityCG.cginc"
 
@@ -54,6 +52,7 @@ Shader "Hidden/FXAA III (Console)" {
 		uniform half _EdgeThresholdMin;
 		uniform half _EdgeThreshold;
 		uniform half _EdgeSharpness;
+		half4 _MainTex_ST;
 
 		struct v2f {
 			float4 pos : SV_POSITION;
@@ -68,7 +67,7 @@ Shader "Hidden/FXAA III (Console)" {
 		v2f vert (appdata_img v)
 		{
 			v2f o;
-			o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+			o.pos = UnityObjectToClipPos (v.vertex);
 			
 			o.uv = v.texcoord.xy;
 			
@@ -97,9 +96,9 @@ Shader "Hidden/FXAA III (Console)" {
 
 // hacky support for NaCl
 #if defined(SHADER_API_GLES) && defined(SHADER_API_DESKTOP)
-		#define FxaaTexTop(t, p) tex2D(t, p) 
+		#define FxaaTexTop(t, p) tex2D(t, UnityStereoScreenSpaceUVAdjust(p, _MainTex_ST)) 
 #else
-		#define FxaaTexTop(t, p) tex2Dlod(t, float4(p, 0.0, 0.0))
+		#define FxaaTexTop(t, p) tex2Dlod(t, float4(UnityStereoScreenSpaceUVAdjust(p, _MainTex_ST), 0.0, 0.0))
 #endif
 
 		inline half TexLuminance( float2 uv )
